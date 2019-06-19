@@ -1,1 +1,48 @@
-二维列表的上下左右移动
+英英电子词典 通过客户端和服务端进行链接查询
+
+操作步骤 :
+    
+		1. 确定并发方案,确定套接字使用,具体细节和需求分析.
+		   
+			 * Process多进程  tcp 套接字
+			 * 注册后直接进入二级界面,历史记录最近10个
+
+		2. 使用dict --> words
+	
+
+			 用户表 :  id   name   passwd 
+
+				create table user (id int primary key auto_increment,name varchar(32) not null,passwd varchar(128) not null);
+ 
+			 历史记录 : id   name   word   time
+
+			  create table hist (id int primary key auto_increment,name varchar(32) not null,word varchar(32) not null,time datetime default now());
+
+		
+		3. 结构设计, 如何封装,客户端服务端工作流程
+
+		   * 客户端 (发请求,展示结果)
+
+			 * 服务端 (逻辑操作,解决请求)
+			 * 数据库操作端 (操作数据库)
+
+			 界面处理
+			    
+					while True:
+							界面1 
+							while  True:
+								  界面2
+
+		4. 功能模块划分
+
+		  *  网络搭建
+			*  注册
+			*  登录
+			*  查单词
+			*  历史记录
+	
+
+注册 :  客户端  R  name   passwd
+
+登录 :  客户端  L  name  passwd 
+
